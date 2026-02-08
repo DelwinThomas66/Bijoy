@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day Special 💝</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💝</title>
+    <link rel="stylesheet" href="css/valentine.css">
 </head>
 <body>
-  <!-- Animated background elements -->
-  <div class="stars"></div>
-  <div class="hearts-rain" id="heartsRain"></div>
-  
-  <div class="welcome-container">
-    <div class="sparkle sparkle-1">✨</div>
-    <div class="sparkle sparkle-2">✨</div>
-    <div class="sparkle sparkle-3">✨</div>
-    <div class="sparkle sparkle-4">✨</div>
-    
-    <div class="main-heart">💖</div>
-    
-    <h1 class="animated-title">
-      <span class="word">Happy</span>
-      <span class="word">Valentine's</span>
-      <span class="word">Week</span>
-      <span class="word heart-name">Anisha</span>
-      <span class="heart-emoji">❤️</span>
-    </h1>
-    
-    <div class="subtitle-container">
-      <p class="subtitle">Where every heartbeat of yours finds a story...</p>
-      <div class="love-indicator">
-        <span class="heartbeat">💗</span>
-        <span class="heartbeat">💗</span>
-        <span class="heartbeat">💗</span>
-      </div>
+    <!-- SVG Filter for ink effect -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="ink-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="hearts-background" id="heartsBackground"></div>
+
+    <div class="container">
+        <!-- Question Page -->
+        <div class="question-page" id="questionPage">
+            <h1>Will You Be My Valentine? 💝</h1>
+            
+            <div class="gif-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDhxdTF5aDJ3eGE4ejBrYmE0OHNxNXE4aGt4Ym5vZXp6MzBmYnZjbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="Cute asking">
+            </div>
+
+            <div class="funny-message" id="funnyMessage"></div>
+
+            <div class="buttons">
+                <button id="yesBtn">Yes! 💕</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+
+        <!-- Envelope Page -->
+        <div class="envelope-page" id="envelopePage">
+            <div class="celebration">🎉 💖 🎉</div>
+            <h1 style="color: #e91e63; font-size: 2em; margin-bottom: 20px; animation: bounce 1s ease infinite;">Yay! You Said Yes!</h1>
+            
+            <div class="envelope-container" id="envelopeContainer">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body"></div>
+                    <div class="heart-seal">💌</div>
+                </div>
+            </div>
+            
+            <div class="click-text">Click the envelope to read your letter! ✨</div>
+        </div>
+
+        <!-- Letter Page -->
+        <div class="letter-page" id="letterPage">
+            <h1>A Letter From My Heart</h1>
+            <div class="letter-paper">
+                <div class="letter-content" id="letterContent">
+                    <p data-text="I saw you clicked YES with your whole heart—excellent decision. You’ve officially chosen wisely, and our relationship contract has been renewed."></p>
+                    <div class="signature">Yours,<br>Mr. Shundappi  💝</div>
+                </div>
+                
+          
+            </div>
+        </div>
     </div>
-    
-    <div class="button-container">
-      <button id="nextPage" class="magical-button">
-        <span class="button-text">Wanna see what's stored for you?</span>
-        <span class="button-icon">🎁</span>
-      </button>
-    </div>
-    
-    <div class="floating-emojis">
-      <div class="emoji emoji-1">🌹</div>
-      <div class="emoji emoji-2">💕</div>
-      <div class="emoji emoji-3">🎈</div>
-      <div class="emoji emoji-4">⭐</div>
-      <div class="emoji emoji-5">💝</div>
-      <div class="emoji emoji-6">🌸</div>
-    </div>
-  </div>
-  
-  <script src="js/script.js"></script>
+
+    <script src="js/valentine.js"></script>
 </body>
 </html>

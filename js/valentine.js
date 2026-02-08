@@ -31,7 +31,22 @@ const funnyMessages = [
     "Just click Yes already! 😄",
     "Okay, but actually yes though? 💕",
     "You're running out of No button! 😂",
-    "Fine, but Yes is the right answer! ✨"
+    "Fine, but Yes is the right answer! ✨",
+    "Nope. I’m rejecting your rejection. 😌",
+    "Plot twist: the No button is on a diet. 🥗",
+    "This button is shrinking faster than my patience. 🤏",
+    "Stop bullying the No button, it’s innocent. 😭",
+    "If you can still see 'No', you’re too powerful. 🧙‍♀️",
+    "Okay… now it’s basically a speck. 🔍",
+    "Congratulations, you’re about to lose the No button forever. 🫥",
+    "Where did it go? I swear it was here a second ago. 👀",
+    "No button has left the chat. 🚪",
+    "We only accept 'Yes' in this household. 🏠",
+    "Last chance to be cute and click YES. 😇",
+    "Fine. I’ll make YES huge and obvious. 💖",
+    "At this point, 'No' is just a rumor. 🤫",
+    "If you’re looking for No… try the next universe. 🌌",
+    "No button status: missing. Reward: your smile. 😄"
 ];
 
 // Variables for button sizing
@@ -42,29 +57,40 @@ let noPadding = 15;
 
 // No button click handler
 noBtn.addEventListener('click', function() {
-    if (noClickCount < funnyMessages.length) {
-        funnyMessage.textContent = funnyMessages[noClickCount];
+    {
+        const msgIndex = Math.min(noClickCount, funnyMessages.length - 1);
+        funnyMessage.textContent = funnyMessages[msgIndex];
         funnyMessage.style.animation = 'none';
         setTimeout(() => {
             funnyMessage.style.animation = 'shake 0.5s ease';
         }, 10);
         
         // Increase Yes button size
-        yesFontSize += 0.15;
+        yesFontSize += 0.16;
         yesBtn.style.fontSize = yesFontSize + 'em';
         yesBtn.style.padding = (15 + noClickCount * 3) + 'px ' + (40 + noClickCount * 5) + 'px';
         
         // Decrease No button size
-        noFontSize = Math.max(0.4, noFontSize - 0.15);
-        noPadding = Math.max(5, noPadding - 2);
+        noFontSize = Math.max(0.12, noFontSize - 0.14);
+        noPadding = Math.max(1, noPadding - 2);
         noBtn.style.fontSize = noFontSize + 'em';
         noBtn.style.padding = noPadding + 'px ' + (noPadding * 2) + 'px';
+        noBtn.style.transform = `scale(${Math.max(0.05, 1 - noClickCount * 0.08)})`;
         
         noClickCount++;
 
-        // Make No button almost invisible after many clicks
-        if (noClickCount > 7) {
-            noBtn.style.opacity = Math.max(0.3, 1 - (noClickCount - 7) * 0.15);
+        // Make No button basically impossible to find after a point
+        if (noClickCount >= 9) {
+            noBtn.style.opacity = Math.max(0.15, 1 - (noClickCount - 8) * 0.22);
+        }
+        if (noClickCount >= 12) {
+            noBtn.style.opacity = '0';
+            noBtn.style.visibility = 'hidden';
+            noBtn.style.pointerEvents = 'none';
+            funnyMessage.textContent = "Wait… where’s the NO button? I only see YES now. 😇";
+        }
+        if (noClickCount >= 14) {
+            noBtn.style.display = 'none';
         }
     }
 });
@@ -154,21 +180,20 @@ function startTypingEffect() {
     typeNextParagraph();
 }
 
-// Proposal button click handler
-document.addEventListener('DOMContentLoaded', function() {
-    const proposalBtn = document.getElementById('proposalBtn');
-    if (proposalBtn) {
-        proposalBtn.addEventListener('click', function() {
-            // Create magical transition effect
-            createMagicalTransition();
-            
-            // Navigate after animation
-            setTimeout(() => {
-                window.location.href = 'proposal.html'; // Your proposal page
-            }, 1500);
-        });
-    }
-});
+// Final button click handler (keeps everything on this page)
+const proposalBtn = document.getElementById('proposalBtn');
+if (proposalBtn) {
+    proposalBtn.addEventListener('click', function() {
+        createMagicalTransition();
+
+        setTimeout(() => {
+            proposalBtn.disabled = true;
+
+            const buttonText = proposalBtn.querySelector('.button-text');
+            if (buttonText) buttonText.textContent = "Happy Valentine's Day 💖";
+        }, 900);
+    });
+}
 
 // Magical transition effect
 function createMagicalTransition() {
