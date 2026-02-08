@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Journey</title>
+  <link rel="stylesheet" href="css/style-journey.css">
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="hearts-background"></div>
+  
+  <div class="journey-container">
+    <h1>Our Journey of Infinity 💞</h1>
+    <svg id="journeyPath" viewBox="0 0 1400 400" preserveAspectRatio="none">
+      <!-- Wavy path from far left to far right -->
+      <path id="wavePath" d="M 0 200 
+                             C 200 50, 400 350, 600 200
+                             S 1000 50, 1400 200" 
+            stroke="#ff4b5c" stroke-width="4" fill="transparent"/>
+    </svg>
+    <!-- Milestones with expandable notes -->
+    <div class="milestone" id="stop1" data-position="0.10">
+      <div class="milestone-icon">💑</div>
+      <div class="milestone-title">First Meeting (Mine)</div>
+      <div class="milestone-note">
+        I still remember the first time I saw you on Ethnic Day....pink or blue saree, I'm not sure. But I am sure my heart skipped a beat. 
+      </div>
+    </div>
+    <div class="milestone" id="stop2" data-position="0.30">
+      <div class="milestone-icon">☕</div>
+      <div class="milestone-title">Asking for First Coffee Date</div>
+      <div class="milestone-note">
+        Years later, I finally asked you out for coffee and you said no 😂.
+      </div>
+    </div>
+    <div class="milestone" id="stop3" data-position="0.50">
+      <div class="milestone-icon">🙂‍↔️</div>
+      <div class="milestone-title">Second Coffee Date Denial</div>
+      <div class="milestone-note">
+        Same story a year later, you said you were busy!!!
+      </div>
+    </div>
+    <div class="milestone" id="stop4" data-position="0.72">
+      <div class="milestone-icon">🤩</div>
+      <div class="milestone-title">Finally the third ask</div>
+      <div class="milestone-note">
+        Recently, you said yes at last, then my schedule decided to interfere.
+      </div>
+    </div>
+    <div class="milestone infinity" id="stop5" data-position="0.92">
+      <div class="milestone-icon">♾️</div>
+      <div class="milestone-title">Infinity & Beyond</div>
+      <div class="milestone-note">
+        Our story continues, forever and always. Grateful.
+      </div>
+    </div>
+    <button id="nextPage">Continue the Journey</button>
+  </div>
+  <script src="js/journey.js"></script>
+</body>
+</html>

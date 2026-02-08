@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+*.log
+.env
+.vscode/
+__pycache__/
+*.pyc
+# macOS files
+.DS_Store
+# Build folders
+dist/
+build/
