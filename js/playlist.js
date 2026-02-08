@@ -7,35 +7,35 @@ const songs = [
     note: "The first song you said you like",
     icon: "🎶",
     // Using a sample romantic instrumental - replace with actual song URL
-    audioUrl: "/Users/bijoy.kunjumon/Desktop/Bijoy/music/Dooron Dooron(KoshalWorld.Com).mp3"
+    audioUrl: "music/Dooron Dooron(KoshalWorld.Com).mp3"
   },
   {
     title: "Baakhuda Tumhi Ho",
     artist: "Atif Aslam",
     note: "Reminds me of you",
     icon: "💕",
-    audioUrl: "/Users/bijoy.kunjumon/Desktop/Bijoy/music/Bakhuda Tumhi Ho(KoshalWorld.Com).mp3"
+    audioUrl: "music/Bakhuda Tumhi Ho(KoshalWorld.Com).mp3"
   },
   {
     title: "Kahin Toh.. -  AR Rahman",
     artist: "A R Rahman",
     note: "Forever and always fan",
     icon: "🌟",
-    audioUrl: "/Users/bijoy.kunjumon/Desktop/Bijoy/music/Kahin To - Jaane Tu.. Ya Jaane Na 128 Kbps.mp3"
+    audioUrl: "music/Kahin To - Jaane Tu.. Ya Jaane Na 128 Kbps.mp3"
   },
   {
     title: "Perfect - Ed Sheeran",
     artist: "Ed Sheeran",
     note: "You PERFECT !",
     icon: "✨",
-    audioUrl: "/Users/bijoy.kunjumon/Desktop/Bijoy/music/Edd_Sheeran_-_Perfect_(mp3.pm).mp3"
+    audioUrl: "music/Edd_Sheeran_-_Perfect_(mp3.pm).mp3"
   },
   {
     title: "What makes you beautiful - One Direction",
     artist: "One Direction",
     note: "You beautiful SOUL",
     icon: "🎵",
-    audioUrl: "/Users/bijoy.kunjumon/Desktop/Bijoy/music/One_Direction_-_Makes_you_beautiful._(mp3.pm).mp3"
+    audioUrl: "music/One_Direction_-_Makes_you_beautiful._(mp3.pm).mp3"
   }
 ];
 
